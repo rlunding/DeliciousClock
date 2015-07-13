@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">DeliciousClock</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_register">RegisterActivity</string>
+
+
+    <!-- TITLES FOR SELECTIONS ACTIVITIES-->
+    <string name="meal_selection_activity_title">Make your pick</string>
+    <string name="time_selection_activity_title">Choose your time</string>
+    <string name="address_selection_activity_title">Where do you live</string>
+    <string name="overview_selection_activity_title">Overview</string>
+    <string name="profile_selection_activity_title">Create your profile</string>
+    <string name="payment_selection_activity_title">Payment</string>
+
+</resources>
