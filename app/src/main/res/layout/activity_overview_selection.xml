@@ -47,7 +47,6 @@
                     android:layout_height="wrap_content"
                     android:gravity="right"
                     android:layout_weight="1"
-                    android:text="Bacon and eggs"
                     android:id="@+id/overview_selection_meal"/>
             </LinearLayout>
 
@@ -69,7 +68,6 @@
                     android:layout_height="wrap_content"
                     android:gravity="right"
                     android:layout_weight="1"
-                    android:text="07:30 AM"
                     android:id="@+id/overview_selection_delivery"/>
             </LinearLayout>
 
@@ -91,7 +89,6 @@
                     android:layout_height="wrap_content"
                     android:gravity="right"
                     android:layout_weight="1"
-                    android:text="10 minutes prior"
                     android:id="@+id/overview_selection_alarm"/>
             </LinearLayout>
 
@@ -113,7 +110,6 @@
                     android:layout_height="wrap_content"
                     android:gravity="right"
                     android:layout_weight="1"
-                    android:text="120 E 87th street"
                     android:id="@+id/overview_selection_address"/>
             </LinearLayout>
 
@@ -131,7 +127,6 @@
             android:layout_height="match_parent"
             android:text="Correct"
             android:id="@+id/overview_selection_continue_button"
-            android:enabled="false"
             android:background="@color/continue_button_background_color"
             android:textColor="@color/continue_button_text_color"/>
     </FrameLayout>

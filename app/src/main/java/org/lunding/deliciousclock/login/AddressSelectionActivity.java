@@ -56,11 +56,12 @@ public class AddressSelectionActivity extends AppCompatActivity {
         stateField = (EditText) findViewById(R.id.address_selection_state);
         zipcodeField = (EditText) findViewById(R.id.address_selection_zipcode);
 
+        address = signupObject.getAddress();
         if (address != null){
             addressField.setText(address.getAddress());
             cityField.setText(address.getCity());
             stateField.setText(address.getState());
-            zipcodeField.setText(address.getZipCode());
+            zipcodeField.setText(String.valueOf(address.getZipCode()));
         }
 
         stateField.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -83,7 +84,7 @@ public class AddressSelectionActivity extends AppCompatActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus){
                     int zipCode = getZipCode();
-                    if (zipCode <= 0 || String.valueOf(zipCode).length() != 5){
+                    if (String.valueOf(zipCode).length() != 5){
                         Toast.makeText(mActivity, "Invalid zipcode", Toast.LENGTH_SHORT).show();
                         zipcodeValid = false;
                     } else {
@@ -119,7 +120,7 @@ public class AddressSelectionActivity extends AppCompatActivity {
             this.address = new Address(getAddress(), getCity(), getState(), getZipCode());
             continueButton.setEnabled(true);
         } else {
-            continueButton.setEnabled(true);
+            continueButton.setEnabled(false);
         }
     }
 
