@@ -1,15 +1,12 @@
 package org.lunding.deliciousclock.login;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -79,13 +76,10 @@ public class TimeSelectionActivity extends AppCompatActivity {
         });
 
         Log.d(TAG, TAG + " initialized");
-
     }
 
     private void setTimeButtonLabel(){
         String minute = time.getMinute() < 10 ? "0"+time.getMinute() : time.getMinute()+"";
         timePickerButton.setText(time.getHourOfDay() + ":" + minute);
     }
-
-
 }

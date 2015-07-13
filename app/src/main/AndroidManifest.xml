@@ -21,24 +21,39 @@
         </activity>
         <activity
             android:name=".login.MealSelectionActivity"
-            android:label="@string/meal_selection_activity_title">
+            android:label="@string/meal_selection_activity_title"
+            android:parentActivityName=".login.LoginActivity"
+            android:launchMode="singleTop">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".login.LoginActivity"/>
         </activity>
         <activity
             android:name=".login.TimeSelectionActivity"
-            android:label="@string/time_selection_activity_title">
+            android:label="@string/time_selection_activity_title"
+            android:parentActivityName=".login.MealSelectionActivity"
+            android:launchMode="singleTop">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".login.MealSelectionActivity"/>
         </activity>
         <activity
             android:name=".login.AddressSelectionActivity"
-            android:label="@string/address_selection_activity_title">
+            android:label="@string/address_selection_activity_title"
+            android:parentActivityName=".login.TimeSelectionActivity"
+            android:launchMode="singleTop">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".login.TimeSelectionActivity"/>
+        </activity>
+        <activity
+            android:name=".login.OverviewSelectionActivity"
+            android:label="@string/overview_selection_activity_title"
+            android:parentActivityName=".login.AddressSelectionActivity"
+            android:launchMode="singleTop">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".login.AddressSelectionActivity"/>
         </activity>
     </application>
 
