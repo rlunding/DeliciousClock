@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/main_background_color"
     tools:context="org.lunding.deliciousclock.login.MealSelectionActivity">
 
     <ListView
@@ -12,7 +13,7 @@
         android:id="@+id/meal_selection_listView"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:layout_above="@+id/meal_selection_button"
+        android:layout_above="@+id/meal_selection_continue_button"
         android:listSelector="@android:color/transparent"
         android:cacheColorHint="@android:color/transparent"
         android:divider="@null"
@@ -26,6 +27,8 @@
         android:enabled="false"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:background="@color/continue_button_background_color"
+        android:textColor="@color/continue_button_text_color"/>
 
 </RelativeLayout>

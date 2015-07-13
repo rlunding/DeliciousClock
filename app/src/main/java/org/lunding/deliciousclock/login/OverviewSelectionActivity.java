@@ -30,7 +30,7 @@ public class OverviewSelectionActivity extends AppCompatActivity {
         signupObject = (SignupObject) getIntent().getSerializableExtra(SignupObject.SIGNOP_OBJECT_TAG);
         setContentView(R.layout.activity_overview_selection);
 
-        continueButton = (Button) findViewById(R.id.meal_selection_continue_button);
+        continueButton = (Button) findViewById(R.id.overview_selection_continue_button);
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,6 +40,9 @@ public class OverviewSelectionActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
 
 
 

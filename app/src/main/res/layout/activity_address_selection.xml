@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:gravity="center_vertical"
     android:orientation="vertical"
+    android:background="@color/main_background_color"
     tools:context="org.lunding.deliciousclock.login.MealSelectionActivity">
 
     <FrameLayout
@@ -72,6 +73,8 @@
             android:layout_height="match_parent"
             android:text="Continue"
             android:id="@+id/address_selection_continue_button"
-            android:enabled="false" />
+            android:enabled="false"
+            android:background="@color/continue_button_background_color"
+            android:textColor="@color/continue_button_text_color"/>
     </FrameLayout>
 </LinearLayout>

@@ -5,14 +5,14 @@
     android:layout_height="match_parent"
     android:gravity="center_vertical"
     android:orientation="vertical"
+    android:background="@color/main_background_color"
     tools:context="org.lunding.deliciousclock.login.MealSelectionActivity">
 
-    <FrameLayout
-        android:id="@+id/map"
+    <ImageView
+        android:id="@+id/overview_selection_image"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="7"/>
-    <!-- android:name="com.google.android.gms.maps.MapFragment"-->
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -21,44 +21,103 @@
         android:layout_weight="7"
         android:layout_marginTop="20dp">
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:inputType="textPostalAddress"
-            android:ems="10"
-            android:id="@+id/address_selection_address"
-            android:hint="Address">
-            <requestFocus android:layout_width="wrap_content" />
-        </EditText>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:padding="5dp"
+            android:background="#fff"
+            android:orientation="vertical">
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:inputType="textAutoComplete"
-            android:ems="10"
-            android:id="@+id/address_selection_city"
-            android:hint="City" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal">
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:inputType="textAutoComplete"
-            android:ems="10"
-            android:id="@+id/address_selection_state"
-            android:hint="State" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:layout_weight="1"
+                    android:text="Meal"/>
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/address_selection_zipcode"
-            android:hint="Zip code" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:layout_weight="1"
+                    android:text="Bacon and eggs"
+                    android:id="@+id/overview_selection_meal"/>
+            </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:layout_weight="1"
+                    android:text="Delivery"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:layout_weight="1"
+                    android:text="07:30 AM"
+                    android:id="@+id/overview_selection_delivery"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:layout_weight="1"
+                    android:text="Alarm"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:layout_weight="1"
+                    android:text="10 minutes prior"
+                    android:id="@+id/overview_selection_alarm"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:layout_weight="1"
+                    android:text="Street"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:layout_weight="1"
+                    android:text="120 E 87th street"
+                    android:id="@+id/overview_selection_address"/>
+            </LinearLayout>
+
+        </LinearLayout>
     </LinearLayout>
 
     <FrameLayout
@@ -70,8 +129,10 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Continue"
-            android:id="@+id/address_selection_continue_button"
-            android:enabled="false" />
+            android:text="Correct"
+            android:id="@+id/overview_selection_continue_button"
+            android:enabled="false"
+            android:background="@color/continue_button_background_color"
+            android:textColor="@color/continue_button_text_color"/>
     </FrameLayout>
 </LinearLayout>
