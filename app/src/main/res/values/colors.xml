@@ -2,8 +2,11 @@
 <resources>
     <color name="meal_selection_default_color">#ffffff</color>
     <color name="meal_selection_pressed_color">#4d90fe</color>
-
     <color name="main_background_color">#fecc80</color>
     <color name="continue_button_background_color">#f68c1e</color>
     <color name="continue_button_text_color">#fff</color>
+    <!-- Header color -->
+    <color name="colorPrimary">#f68c1e</color>
+    <!-- Notification tab color-->
+    <color name="colorPrimaryDark">#EF6C00</color>
 </resources>
