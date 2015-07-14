@@ -18,7 +18,7 @@
         android:paddingRight="15dp"
         android:descendantFocusability="afterDescendants">
 
-   <!--     <FrameLayout
+      <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="60dp">
 
@@ -28,7 +28,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:contentDescription="Image of meal"/>
-
         </FrameLayout>
 
         <TextView
@@ -46,14 +45,6 @@
             android:gravity="center"
             android:fontFamily="sans-serif-condensed"
             android:textAppearance="?android:textAppearanceSmall"/>
-            -->
-
-        <ImageView
-            android:id="@+id/list_item_meal_image"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:contentDescription="Image of meal"/>
 
     </LinearLayout>
 </FrameLayout>
