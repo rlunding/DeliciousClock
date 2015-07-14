@@ -43,8 +43,9 @@ public class MealSelectionActivity extends AppCompatActivity {
             }
         });
 
+
         ArrayList<Meal> arrayOfMeals = new ArrayList<>();
-        arrayOfMeals.add(new Meal(R.drawable.bacon_and_eggs_card, "Beacon and eggs", "Delicious english..."));
+        arrayOfMeals.add(new Meal(R.drawable.bacon_and_eggs_card, "Bacon and eggs", "Delicious english..."));
         arrayOfMeals.add(new Meal(R.drawable.burrito_card, "Burrito", "Delicious english..."));
         arrayOfMeals.add(new Meal(R.drawable.vegetarian_card, "Vegetarians", "Delicious english..."));
         MealAdapter adapter = new MealAdapter(this, arrayOfMeals);
