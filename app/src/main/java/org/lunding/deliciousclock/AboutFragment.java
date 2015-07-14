@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 /**
  * Created by Lunding on 14/07/15.
  */
-public class MessagesFragment extends Fragment {
+public class AboutFragment extends Fragment {
 
-    public MessagesFragment() {
+    public AboutFragment() {
         // Required empty public constructor
     }
 
@@ -25,7 +25,7 @@ public class MessagesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_messages, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_about, container, false);
 
 
         // Inflate the layout for this fragment

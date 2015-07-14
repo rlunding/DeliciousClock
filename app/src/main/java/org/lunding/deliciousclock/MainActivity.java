@@ -85,12 +85,19 @@ public class MainActivity extends ActionBarActivity implements FragmentDrawer.Fr
                 title = getString(R.string.title_home);
                 break;
             case 1:
-                fragment = new FriendsFragment();
-                title = getString(R.string.title_friends);
+                fragment = new SettingsFragment();
+                title = getString(R.string.title_settings);
                 break;
             case 2:
-                fragment = new MessagesFragment();
-                title = getString(R.string.title_messages);
+                fragment = new CancelMealFragment();
+                title = getString(R.string.title_cancel_meal);
+                break;
+            case 3:
+                Toast.makeText(this, "Log out", Toast.LENGTH_SHORT).show();
+                break;
+            case 4:
+                fragment = new AboutFragment();
+                title = getString(R.string.title_about);
                 break;
             default:
                 break;
