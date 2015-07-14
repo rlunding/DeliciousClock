@@ -1,4 +1,4 @@
-package org.lunding.deliciousclock.login;
+package org.lunding.deliciousclock.register;
 
 
 import android.content.Intent;
@@ -6,18 +6,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import org.lunding.deliciousclock.R;
-import org.lunding.deliciousclock.data.Meal;
 import org.lunding.deliciousclock.data.Time;
-
-import java.util.ArrayList;
 
 
 public class OverviewSelectionActivity extends AppCompatActivity {

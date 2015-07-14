@@ -13,7 +13,7 @@
             android:theme="@style/MyMaterialTheme">
         </activity>
         <activity
-            android:name=".login.WelcomeActivity"
+            android:name=".register.WelcomeActivity"
             android:label="@string/title_activity_register" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,40 +21,40 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".login.MealSelectionActivity"
+            android:name=".register.MealSelectionActivity"
             android:label="@string/meal_selection_activity_title"
-            android:parentActivityName=".login.WelcomeActivity"
+            android:parentActivityName=".register.WelcomeActivity"
             android:launchMode="singleTop">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".login.WelcomeActivity"/>
+                android:value=".register.WelcomeActivity"/>
         </activity>
         <activity
-            android:name=".login.TimeSelectionActivity"
+            android:name=".register.TimeSelectionActivity"
             android:label="@string/time_selection_activity_title"
-            android:parentActivityName=".login.MealSelectionActivity"
+            android:parentActivityName=".register.MealSelectionActivity"
             android:launchMode="singleTop">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".login.MealSelectionActivity"/>
+                android:value=".register.MealSelectionActivity"/>
         </activity>
         <activity
-            android:name=".login.AddressSelectionActivity"
+            android:name=".register.AddressSelectionActivity"
             android:label="@string/address_selection_activity_title"
-            android:parentActivityName=".login.TimeSelectionActivity"
+            android:parentActivityName=".register.TimeSelectionActivity"
             android:launchMode="singleTop">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".login.TimeSelectionActivity"/>
+                android:value=".register.TimeSelectionActivity"/>
         </activity>
         <activity
-            android:name=".login.OverviewSelectionActivity"
+            android:name=".register.OverviewSelectionActivity"
             android:label="@string/overview_selection_activity_title"
-            android:parentActivityName=".login.AddressSelectionActivity"
+            android:parentActivityName=".register.AddressSelectionActivity"
             android:launchMode="singleTop">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".login.AddressSelectionActivity"/>
+                android:value=".register.AddressSelectionActivity"/>
         </activity>
     </application>
 

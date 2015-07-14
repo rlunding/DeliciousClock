@@ -6,7 +6,7 @@
     android:gravity="center_vertical"
     android:orientation="vertical"
     android:background="@color/main_background_color"
-    tools:context="org.lunding.deliciousclock.login.MealSelectionActivity">
+    tools:context="org.lunding.deliciousclock.register.AddressSelectionActivity">
 
     <FrameLayout
         android:id="@+id/map"

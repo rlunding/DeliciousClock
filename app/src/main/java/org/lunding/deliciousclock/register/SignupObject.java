@@ -1,4 +1,4 @@
-package org.lunding.deliciousclock.login;
+package org.lunding.deliciousclock.register;
 
 import org.lunding.deliciousclock.data.Address;
 import org.lunding.deliciousclock.data.Meal;

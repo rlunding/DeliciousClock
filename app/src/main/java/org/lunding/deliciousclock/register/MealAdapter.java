@@ -1,4 +1,4 @@
-package org.lunding.deliciousclock.login;
+package org.lunding.deliciousclock.register;
 
 import android.content.Context;
 import android.view.LayoutInflater;

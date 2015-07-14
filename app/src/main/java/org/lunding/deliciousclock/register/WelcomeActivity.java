@@ -1,4 +1,4 @@
-package org.lunding.deliciousclock.login;
+package org.lunding.deliciousclock.register;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
