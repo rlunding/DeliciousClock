@@ -35,8 +35,8 @@ public class MealAdapter extends ArrayAdapter<Meal> {
             viewHolder = (MealViewHolder) convertView.getTag();
         }
         viewHolder.image.setImageResource(meal.getImage());
-        viewHolder.title.setText(meal.getTitle());
-        viewHolder.description.setText(meal.getDescription());
+        //viewHolder.title.setText(meal.getTitle());
+        //viewHolder.description.setText(meal.getDescription());
 
         return convertView;
     }
@@ -48,8 +48,8 @@ public class MealAdapter extends ArrayAdapter<Meal> {
 
         public MealViewHolder(View v){
             image = (ImageView) v.findViewById(R.id.list_item_meal_image);
-            title = (TextView) v.findViewById(R.id.list_item_meal_title);
-            description = (TextView) v.findViewById(R.id.list_item_meal_description);
+            //title = (TextView) v.findViewById(R.id.list_item_meal_title);
+            //description = (TextView) v.findViewById(R.id.list_item_meal_description);
         }
     }
 }
