@@ -1,6 +1,5 @@
 package org.lunding.deliciousclock.login;
 
-import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -9,18 +8,18 @@ import android.view.MenuItem;
 
 import org.lunding.deliciousclock.R;
 
-public class LoginActivity extends AppCompatActivity {
+public class WelcomeActivity extends AppCompatActivity {
 
-    private static final String TAG = LoginActivity.class.getSimpleName();
+    private static final String TAG = WelcomeActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d(TAG, TAG + " initializing...");
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_welcome);
         if (savedInstanceState == null){ //TODO: should always go to this fragment?
             getFragmentManager().beginTransaction()
-                    .replace(R.id.activity_login_container, new LoginFragment())
+                    .replace(R.id.activity_login_container, new WelcomeFragment())
                     .commit();
         }
 
