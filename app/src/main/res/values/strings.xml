@@ -12,9 +12,21 @@
     <!-- TITLES FOR SELECTIONS ACTIVITIES-->
     <string name="meal_selection_activity_title">Make your pick</string>
     <string name="time_selection_activity_title">Choose your time</string>
-    <string name="address_selection_activity_title">Where do you live</string>
+    <string name="address_selection_activity_title">Where do you live?</string>
     <string name="overview_selection_activity_title">Overview</string>
     <string name="profile_selection_activity_title">Create your profile</string>
     <string name="payment_selection_activity_title">Payment</string>
+
+    <string name="address_form">Address</string>
+    <string name="city_form">City</string>
+    <string name="state_form">State</string>
+    <string name="zip_form">Zip code</string>
+    <string name="address_selection_continue_button">Move on!</string>
+    <string name="meal_selection_continue_button">Let\'s go!</string>
+    <string name="wanting_breakfast">I want my breakfast at...</string>
+    <string name="breakfast_time_order_button">7:30 am</string>
+    <string name="wake_up_request">... so please wake me up</string>
+    <string name="time_selection_notification_button">10 minutes</string>
+    <string name="earlier">earlier</string>
 
 </resources>

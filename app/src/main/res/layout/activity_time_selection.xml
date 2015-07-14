@@ -3,57 +3,66 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
     android:background="@color/main_background_color"
-    tools:context="org.lunding.deliciousclock.login.MealSelectionActivity">
+    tools:context="org.lunding.deliciousclock.login.MealSelectionActivity"
+    >
 
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="14"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="I want my breakfast at..."
-        android:gravity="center"
-        android:layout_marginTop="50dp"
-        android:layout_weight="7"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/wanting_breakfast"
+            android:layout_gravity="center_horizontal"
+            />
 
-    <Button
-        android:id="@+id/time_selection_time_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="12.10 am"
-        android:layout_marginTop="100dp"
-        android:layout_weight="7"/>
+        <Button
+            android:id="@+id/time_selection_time_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/breakfast_time_order_button"
+            android:layout_gravity="center_horizontal"
+            />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="... so please wake me up"
-        android:gravity="center"
-        android:layout_marginTop="150dp"
-        android:layout_weight="7"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/wake_up_request"
+            android:layout_gravity="center_horizontal"
+           />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="10 min"
-        android:id="@+id/time_selection_offset_button"
-        android:layout_marginTop="200dp"
-        android:layout_weight="7"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/time_selection_notification_button"
+            android:id="@+id/time_selection_offset_button"
+            android:layout_gravity="center_horizontal"
+            />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="earlier"
-        android:gravity="center"
-        android:layout_marginTop="250dp"
-        android:layout_weight="7"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/earlier"
+            android:layout_gravity="center_horizontal"
+            />
+
+    </LinearLayout>
+
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5"
+        android:layout_weight="2"
         android:gravity="center_horizontal|bottom">
 
         <Button

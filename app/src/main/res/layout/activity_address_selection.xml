@@ -29,7 +29,7 @@
             android:inputType="textPostalAddress"
             android:ems="10"
             android:id="@+id/address_selection_address"
-            android:hint="Address">
+            android:hint="@string/address_form">
             <requestFocus android:layout_width="wrap_content" />
         </EditText>
 
@@ -40,7 +40,7 @@
             android:inputType="textAutoComplete"
             android:ems="10"
             android:id="@+id/address_selection_city"
-            android:hint="City" />
+            android:hint="@string/city_form" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -49,7 +49,7 @@
             android:inputType="textAutoComplete"
             android:ems="10"
             android:id="@+id/address_selection_state"
-            android:hint="State" />
+            android:hint="@string/state_form" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -58,7 +58,7 @@
             android:inputType="number"
             android:ems="10"
             android:id="@+id/address_selection_zipcode"
-            android:hint="Zip code" />
+            android:hint="@string/zip_form" />
 
     </LinearLayout>
 
@@ -71,7 +71,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Continue"
+            android:text="@string/address_selection_continue_button"
             android:id="@+id/address_selection_continue_button"
             android:enabled="false"
             android:background="@color/continue_button_background_color"

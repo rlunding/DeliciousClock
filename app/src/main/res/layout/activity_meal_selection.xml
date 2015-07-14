@@ -42,7 +42,7 @@ tools:context="org.lunding.deliciousclock.login.MealSelectionActivity">
         <Button
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Continue"
+            android:text="@string/meal_selection_continue_button"
             android:id="@+id/meal_selection_continue_button"
             android:enabled="false"
             android:background="@color/continue_button_background_color"
