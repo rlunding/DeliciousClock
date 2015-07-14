@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.lunding.deliciousclock.LoginActivity;
 import org.lunding.deliciousclock.R;
 import org.lunding.deliciousclock.data.Time;
 
@@ -32,10 +33,11 @@ public class OverviewSelectionActivity extends AppCompatActivity {
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "Continue to next screen");
-                Intent intent = new Intent(getApplicationContext(), TimeSelectionActivity.class);
-                intent.putExtra(SignupObject.SIGNOP_OBJECT_TAG, signupObject);
+                Log.d(TAG, "Continue to register screen");
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                intent.addFlags(LoginActivity.REGISTER_FLAG);
                 startActivity(intent);
+                finish();
             }
         });
 

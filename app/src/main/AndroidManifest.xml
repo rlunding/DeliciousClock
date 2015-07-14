@@ -10,51 +10,56 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/MyMaterialTheme">
+            android:theme="@style/MyMaterialTheme" >
         </activity>
         <activity
             android:name=".register.WelcomeActivity"
-            android:label="@string/title_activity_register" >
+            android:label="@string/title_activity_welcome" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".register.MealSelectionActivity"
             android:label="@string/meal_selection_activity_title"
-            android:parentActivityName=".register.WelcomeActivity"
-            android:launchMode="singleTop">
+            android:launchMode="singleTop"
+            android:parentActivityName=".register.WelcomeActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".register.WelcomeActivity"/>
+                android:value=".register.WelcomeActivity" />
         </activity>
         <activity
             android:name=".register.TimeSelectionActivity"
             android:label="@string/time_selection_activity_title"
-            android:parentActivityName=".register.MealSelectionActivity"
-            android:launchMode="singleTop">
+            android:launchMode="singleTop"
+            android:parentActivityName=".register.MealSelectionActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".register.MealSelectionActivity"/>
+                android:value=".register.MealSelectionActivity" />
         </activity>
         <activity
             android:name=".register.AddressSelectionActivity"
             android:label="@string/address_selection_activity_title"
-            android:parentActivityName=".register.TimeSelectionActivity"
-            android:launchMode="singleTop">
+            android:launchMode="singleTop"
+            android:parentActivityName=".register.TimeSelectionActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".register.TimeSelectionActivity"/>
+                android:value=".register.TimeSelectionActivity" />
         </activity>
         <activity
             android:name=".register.OverviewSelectionActivity"
             android:label="@string/overview_selection_activity_title"
-            android:parentActivityName=".register.AddressSelectionActivity"
-            android:launchMode="singleTop">
+            android:launchMode="singleTop"
+            android:parentActivityName=".register.AddressSelectionActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".register.AddressSelectionActivity"/>
+                android:value=".register.AddressSelectionActivity" />
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login" >
         </activity>
     </application>
 

@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.lunding.deliciousclock.LoginActivity;
 import org.lunding.deliciousclock.R;
 
 public class WelcomeFragment extends Fragment {
@@ -39,7 +40,8 @@ public class WelcomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "Continue to login screen");
-                Intent intent = new Intent(getActivity(), MealSelectionActivity.class);
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                intent.addFlags(LoginActivity.LOGIN_FLAG);
                 startActivity(intent);
             }
         });
