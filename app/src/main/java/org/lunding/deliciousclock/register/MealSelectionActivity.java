@@ -45,11 +45,11 @@ public class MealSelectionActivity extends AppCompatActivity {
 
 
         ArrayList<Meal> arrayOfMeals = new ArrayList<>();
-        arrayOfMeals.add(new Meal(R.drawable.eggs_and_bacon, "Bacon and eggs", "Includes two sweet delicious fried pieces of pork," +
+        arrayOfMeals.add(new Meal(R.drawable.bacon_and_eggs, "Bacon and eggs", "Includes two sweet delicious fried pieces of pork," +
                 "scramled eggs, and a piece of toast."));
-        arrayOfMeals.add(new Meal(R.drawable.breakfast_burrito, "Breakfast Burrito", "Includes two delicious breakfast burritos. Pick this one" +
+        arrayOfMeals.add(new Meal(R.drawable.burrito, "Breakfast Burrito", "Includes two delicious breakfast burritos. Pick this one" +
                 "if you're allergic to everything."));
-        arrayOfMeals.add(new Meal(R.drawable.vegetar_breakfast, "Vegetarians", "Includes some vegetarian lasagna thingy. You should pick" +
+        arrayOfMeals.add(new Meal(R.drawable.vegetarian, "Vegetarian", "Includes some vegetarian lasagna thingy. You should pick" +
                 "this one if you're against killing animals for food!"));
         MealAdapter adapter = new MealAdapter(this, arrayOfMeals);
         ListView listView = (ListView) findViewById(R.id.meal_selection_listView);

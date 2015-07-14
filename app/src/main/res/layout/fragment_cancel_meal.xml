@@ -6,7 +6,6 @@
     android:orientation="vertical"
     tools:context="androidhive.info.materialdesign.activity.MessagesFragment">
 
-
     <TextView
         android:id="@+id/label"
         android:layout_alignParentTop="true"
@@ -15,7 +14,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:textSize="45dp"
-        android:text="Messages"
+        android:text="Cancel meal"
         android:textStyle="bold"/>
 
     <TextView
@@ -26,6 +25,6 @@
         android:textSize="12dp"
         android:layout_marginTop="10dp"
         android:gravity="center_horizontal"
-        android:text="Edit fragment_messages.xml to change the appearance" />
+        android:text="Edit fragment_cancel_meal.xml to change the appearance" />
 
 </RelativeLayout>
