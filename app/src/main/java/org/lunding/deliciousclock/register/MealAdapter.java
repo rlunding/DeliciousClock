@@ -15,7 +15,9 @@ import java.util.ArrayList;
 
 /**
  * Created by Lunding on 13/07/15.
+ *
  */
+
 public class MealAdapter extends ArrayAdapter<Meal> {
 
     public MealAdapter(Context context, ArrayList<Meal> meals){
