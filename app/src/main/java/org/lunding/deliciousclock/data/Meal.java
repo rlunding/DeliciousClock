@@ -9,14 +9,28 @@ public class Meal implements Serializable{
 
     private int id;
     private int image;
+    private int imagecard;
+    private int homecard;
     private String title;
     private String description;
 
-    public Meal(int id, int image, String title, String description) {
+
+
+    public Meal(int id, int image, int imagecard, int homecard, String title, String description) {
+
         this.id = id;
         this.image = image;
+        this.imagecard = imagecard;
+        this.homecard = homecard;
         this.title = title;
         this.description = description;
+    }
+    public int getImagecard() {
+        return imagecard;
+    }
+
+    public int getHomecard() {
+        return homecard;
     }
 
     public int getId() {

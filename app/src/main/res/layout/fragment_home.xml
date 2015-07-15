@@ -37,14 +37,15 @@
             android:text="        07:30 AM"
             android:id="@+id/homeview_change_time_button"
             android:layout_width="fill_parent"
-            android:layout_height="80dp"
+            android:layout_height="75dp"
             android:layout_weight="1"
             android:layout_marginStart="30dp"
-            android:layout_marginEnd="15dp"
+            android:layout_marginEnd="5dp"
             android:textSize="20sp"
             android:background="@drawable/clock_knap"
             android:textColor="#f05454"
-            android:fontFamily="sans-serif-medium"
+            android:fontFamily="sans-serif-condensed"
+            android:textStyle="bold"
             >
         </Button>
 
@@ -52,14 +53,15 @@
             android:text="10 MIN"
             android:id="@+id/homeview_change_offset_button"
             android:layout_width="fill_parent"
-            android:layout_height="80dp"
+            android:layout_height="75dp"
             android:layout_weight="1"
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="5dp"
             android:layout_marginEnd="30dp"
             android:textSize="20sp"
             android:background="@drawable/bell_knap"
             android:textColor="#f05454"
-            android:fontFamily="sans-serif-medium">
+            android:fontFamily="sans-serif-condensed"
+            android:textStyle="bold">
         </Button>
     </LinearLayout>
 

@@ -128,7 +128,7 @@ public class AddressSelectionActivity extends AppCompatActivity {
 
     private void validateInput(){
         if (stateValid && zipcodeValid){
-            this.address = new Address(1, getAddress(), getCity(), getState(), getZipCode());
+            this.address = new Address(getAddress(), getCity(), getState(), getZipCode());
             continueButton.setEnabled(true);
         } else {
             continueButton.setEnabled(false);

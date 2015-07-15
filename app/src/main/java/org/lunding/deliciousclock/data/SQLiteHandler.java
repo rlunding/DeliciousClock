@@ -41,11 +41,11 @@ public class SQLiteHandler extends SQLiteOpenHelper {
     public SQLiteHandler(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
 
-        arrayOfMeals.add(new Meal(1, R.drawable.bacon_and_eggs, "Bacon and eggs", "Includes two sweet delicious fried pieces of pork," +
+        arrayOfMeals.add(new Meal(1, R.drawable.bacon_and_eggs, R.drawable.bacon_and_eggs_card, R.drawable.your_next_bacon, "Bacon and eggs", "Includes two sweet delicious fried pieces of pork," +
                 "scramled eggs, and a piece of toast."));
-        arrayOfMeals.add(new Meal(2, R.drawable.burrito, "Breakfast Burrito", "Includes two delicious breakfast burritos. Pick this one" +
+        arrayOfMeals.add(new Meal(2, R.drawable.burrito, R.drawable.burrito_card, R.drawable.your_next_burrito, "Breakfast Burrito", "Includes two delicious breakfast burritos. Pick this one" +
                 "if you're allergic to everything."));
-        arrayOfMeals.add(new Meal(3, R.drawable.vegetarian, "Vegetarian", "Includes some vegetarian lasagna thingy. You should pick" +
+        arrayOfMeals.add(new Meal(3, R.drawable.vegetarian, R.drawable.vegetarian_card, R.drawable.your_next_vegetarian, "Vegetarian", "Includes some vegetarian lasagna thingy. You should pick" +
                 "this one if you're against killing animals for food!"));
     }
 

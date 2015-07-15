@@ -17,6 +17,7 @@ import org.lunding.deliciousclock.data.Meal;
 import org.lunding.deliciousclock.data.Time;
 
 /**
+ *
  * Created by Lunding on 14/07/15.
  */
 public class HomeFragment extends Fragment {
@@ -50,7 +51,7 @@ public class HomeFragment extends Fragment {
 
 
         //TODO: read meal-image from database?
-        mealImage.setImageResource(meal.getImage());
+        mealImage.setImageResource(meal.getHomecard());
         timeButton.setText("      " + Utilities.makeTimeString(time));
         offsetButton.setText(Utilities.makeOffsetStrign(time));
 
