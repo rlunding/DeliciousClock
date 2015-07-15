@@ -51,7 +51,7 @@ public class OverviewSelectionActivity extends AppCompatActivity {
         String alarm = String.valueOf(time.getOffset());
         String address = signupObject.getAddress().getAddress();*/
         Meal meal = Utilities.getMeal(this);
-        int image = meal.getImage();
+        int image = meal.getImagecard();
         String mealTitle = meal.getTitle();
 
         Time time = Utilities.getTime(this);

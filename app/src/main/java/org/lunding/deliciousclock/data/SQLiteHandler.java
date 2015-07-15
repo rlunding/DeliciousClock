@@ -41,11 +41,11 @@ public class SQLiteHandler extends SQLiteOpenHelper {
     public SQLiteHandler(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
 
-        arrayOfMeals.add(new Meal(1, R.drawable.bacon_and_eggs, R.drawable.bacon_and_eggs_card, R.drawable.home_bacon, "Bacon and eggs", "Includes two sweet delicious fried pieces of pork," +
+        arrayOfMeals.add(new Meal(1, R.drawable.bacon_and_eggs, R.drawable.sortkort_bacon, R.drawable.sortkort_bacon, "Bacon and eggs", "Includes two sweet delicious fried pieces of pork," +
                 "scramled eggs, and a piece of toast."));
-        arrayOfMeals.add(new Meal(2, R.drawable.burrito, R.drawable.burrito_card, R.drawable.home_burrito, "Breakfast Burrito", "Includes two delicious breakfast burritos. Pick this one" +
+        arrayOfMeals.add(new Meal(2, R.drawable.burrito, R.drawable.sortkort_burrito, R.drawable.sortkort_burrito, "Breakfast Burrito", "Includes two delicious breakfast burritos. Pick this one" +
                 "if you're allergic to everything."));
-        arrayOfMeals.add(new Meal(3, R.drawable.vegetarian, R.drawable.vegetarian_card, R.drawable.home_vegetarian, "Vegetarian", "Includes some vegetarian lasagna thingy. You should pick" +
+        arrayOfMeals.add(new Meal(3, R.drawable.vegetarian, R.drawable.sortkort_vegetar, R.drawable.sortkort_vegetar, "Vegetarian", "Includes some vegetarian lasagna thingy. You should pick" +
                 "this one if you're against killing animals for food!"));
     }
 
