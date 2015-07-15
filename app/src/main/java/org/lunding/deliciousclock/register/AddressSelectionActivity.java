@@ -34,16 +34,13 @@ public class AddressSelectionActivity extends AppCompatActivity {
     private EditText zipcodeField;
     private Button continueButton;
     private Address address;
-    //private SignupObject signupObject;
     private Activity mActivity = this;
-    private boolean stateValid = false, zipcodeValid = false;
     private GoogleMap googleMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d(TAG, TAG + " initializing...");
         super.onCreate(savedInstanceState);
-        //signupObject = (SignupObject) getIntent().getSerializableExtra(SignupObject.SIGNOP_OBJECT_TAG);
         setContentView(R.layout.activity_address_selection);
 
         continueButton = (Button) findViewById(R.id.address_selection_continue_button);
@@ -52,8 +49,6 @@ public class AddressSelectionActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Log.d(TAG, "Continue to next screen");
                 Intent intent = new Intent(getApplicationContext(), OverviewSelectionActivity.class);
-                //signupObject.setAddress(address);
-                //intent.putExtra(SignupObject.SIGNOP_OBJECT_TAG, signupObject);
                 startActivity(intent);
             }
         });
@@ -67,7 +62,6 @@ public class AddressSelectionActivity extends AppCompatActivity {
         ArrayAdapter<String> stateAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, statesArray);
         stateField.setAdapter(stateAdapter);
 
-        //address = signupObject.getAddress();
         address = Utilities.getAddress(this);
         if (address != null){
             addressField.setText(address.getAddress());
@@ -76,16 +70,31 @@ public class AddressSelectionActivity extends AppCompatActivity {
             zipcodeField.setText(String.valueOf(address.getZipCode()));
         }
 
-        //TODO: proper input validation
+
+        addressField.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    validateInput();
+                }
+            }
+        });
+
+        cityField.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus){
+                    validateInput();
+                }
+            }
+        });
+
         stateField.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     if (!states.containsKey(getState())) {
                         Toast.makeText(mActivity, "That is not a state", Toast.LENGTH_SHORT).show();
-                        stateValid = false;
-                    } else {
-                        stateValid = true;
                     }
                     validateInput();
                 }
@@ -99,9 +108,6 @@ public class AddressSelectionActivity extends AppCompatActivity {
                     String zipCode = getZipCode();
                     if (zipCode.length() != 5) {
                         Toast.makeText(mActivity, "Invalid zipcode", Toast.LENGTH_SHORT).show();
-                        zipcodeValid = false;
-                    } else {
-                        zipcodeValid = true;
                     }
                     validateInput();
                 }
@@ -120,6 +126,7 @@ public class AddressSelectionActivity extends AppCompatActivity {
             googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         }
 
+        validateInput();
 
         Log.d(TAG, TAG + " initialized");
     }
@@ -141,11 +148,11 @@ public class AddressSelectionActivity extends AppCompatActivity {
     }
 
     private void validateInput(){
-        if (stateValid && zipcodeValid){
+        if (!getAddress().isEmpty() && !getCity().isEmpty() && !getState().isEmpty() && !getZipCode().isEmpty()){
             this.address = new Address(getAddress(), getCity(), getState(), getZipCode());
-            continueButton.setEnabled(true);
             Log.d(TAG, "Saving pref meal: " + address);
             Utilities.saveAddress(getApplicationContext(), address);
+            continueButton.setEnabled(true);
         } else {
             continueButton.setEnabled(false);
         }

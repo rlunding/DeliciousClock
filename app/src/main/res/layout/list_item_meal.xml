@@ -33,7 +33,8 @@
             android:orientation="vertical"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
-            android:background="#6cffffff">
+            android:background="#a2313131"
+            android:padding="5dp">
 
             <TextView
                 android:id="@+id/list_item_meal_title"
@@ -43,7 +44,8 @@
                 android:text="hej"
                 android:fontFamily="sans-serif-condensed"
                 android:textAppearance="?android:textAppearanceLarge"
-                android:textColor="@color/continue_button_background_color"/>
+                android:textColor="@color/continue_button_background_color"
+                />
 
             <TextView
                 android:id="@+id/list_item_meal_description"
@@ -52,10 +54,8 @@
                 android:gravity="start|bottom"
                 android:text="davs"
                 android:fontFamily="sans-serif-condensed"
-                android:textAppearance="?android:textAppearanceSmall"/>
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="#fff"/>
         </LinearLayout>
-
-
-
     </RelativeLayout>
 </FrameLayout>

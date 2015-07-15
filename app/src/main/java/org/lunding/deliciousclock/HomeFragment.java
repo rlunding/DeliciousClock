@@ -1,7 +1,6 @@
 package org.lunding.deliciousclock;
 
-import android.app.Activity;
-import android.content.SharedPreferences;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,9 +11,9 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import org.lunding.deliciousclock.data.Address;
-import org.lunding.deliciousclock.data.AppConstants;
 import org.lunding.deliciousclock.data.Meal;
 import org.lunding.deliciousclock.data.Time;
+
 
 /**
  *
@@ -22,9 +21,15 @@ import org.lunding.deliciousclock.data.Time;
  */
 public class HomeFragment extends Fragment {
 
+    private static final String TAG = HomeFragment.class.getSimpleName();
+
     private Meal meal;
     private Time time;
     private Address address;
+
+    private Button timeButton;
+    private Button offsetButton;
+
 
     public HomeFragment() {
         // Required empty public constructor
@@ -46,11 +51,9 @@ public class HomeFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
 
         ImageView mealImage = (ImageView) rootView.findViewById(R.id.homeview_meal_image);
-        Button timeButton = (Button) rootView.findViewById(R.id.homeview_change_time_button);
-        Button offsetButton = (Button) rootView.findViewById(R.id.homeview_change_offset_button);
+        timeButton = (Button) rootView.findViewById(R.id.homeview_change_time_button);
+        offsetButton = (Button) rootView.findViewById(R.id.homeview_change_offset_button);
 
-
-        //TODO: read meal-image from database?
         mealImage.setImageResource(meal.getHomecard());
         timeButton.setText("      " + Utilities.makeTimeString(time));
         offsetButton.setText(Utilities.makeOffsetStrign(time));
@@ -65,28 +68,19 @@ public class HomeFragment extends Fragment {
         timeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Time is now changed", Toast.LENGTH_SHORT).show();
+                Utilities.showTimePicker(getActivity(), time, timeButton, "     ");
             }
         });
 
         offsetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Offset is now changed", Toast.LENGTH_SHORT).show();
+                Utilities.showNumberPicker(getActivity(), time, offsetButton);
             }
         });
 
-        // Inflate the layout for this fragment
+
         return rootView;
     }
 
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-    }
 }

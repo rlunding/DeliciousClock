@@ -1,13 +1,23 @@
 package org.lunding.deliciousclock;
 
+import android.app.Dialog;
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.NumberPicker;
+import android.widget.TimePicker;
+import android.widget.Toast;
 
 import org.lunding.deliciousclock.data.Address;
 import org.lunding.deliciousclock.data.AppConstants;
 import org.lunding.deliciousclock.data.Meal;
 import org.lunding.deliciousclock.data.SQLiteHandler;
 import org.lunding.deliciousclock.data.Time;
+
+import java.util.Calendar;
 
 /**
  *
@@ -76,4 +86,53 @@ public class Utilities {
     public static String makeOffsetStrign(Time time){
         return time.getOffset() + " MIN";
     }
+
+    public static void showTimePicker(final Context context, final Time time, final Button timeButton){
+        showTimePicker(context, time, timeButton, "");
+    }
+
+    public static void showTimePicker(final Context context, final Time time, final Button timeButton, final String padding){
+        Calendar currentTime = Calendar.getInstance();
+        int hour = currentTime.get(Calendar.HOUR_OF_DAY);
+        int minute = currentTime.get(Calendar.MINUTE);
+        TimePickerDialog timePicker = new TimePickerDialog(context,
+                new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        if (hourOfDay > 5 && hourOfDay < 11) {
+                            time.setHourOfDay(hourOfDay);
+                            time.setMinute(minute);
+                            timeButton.setText(padding + Utilities.makeTimeString(time));
+                            Utilities.saveTime(context, time);
+                        } else {
+                            Toast.makeText(context, "We deliver from 06.00 to 11.00", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }, hour, minute, true);
+        timePicker.setTitle("Select time");
+        timePicker.show();
+    }
+
+    public static void showNumberPicker(final Context context, final Time time, final Button offsetButton){
+        final Dialog dialog = new Dialog(context);
+        dialog.setTitle("Minutes before breakfast");
+        dialog.setContentView(R.layout.number_picker_dialog);
+        Button b1 = (Button) dialog.findViewById(R.id.button1);
+        final NumberPicker np = (NumberPicker) dialog.findViewById(R.id.numberPicker1);
+        np.setMinValue(1);
+        np.setMaxValue(30);
+        np.setWrapSelectorWheel(true);
+        np.setValue(time.getOffset());
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                time.setOffset(np.getValue());
+                Utilities.saveTime(context, time);
+                offsetButton.setText(Utilities.makeOffsetStrign(time));
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
+    }
+
 }
