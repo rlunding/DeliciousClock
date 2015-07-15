@@ -26,29 +26,26 @@ public class MealSelectionActivity extends AppCompatActivity {
 
     private Button continueButton;
     private Meal meal;
-    private SignupObject signupObject;
+    //private SignupObject signupObject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d(TAG, TAG + " initializing...");
         super.onCreate(savedInstanceState);
-        signupObject = (SignupObject) getIntent().getSerializableExtra(SignupObject.SIGNOP_OBJECT_TAG);
+        //signupObject = (SignupObject) getIntent().getSerializableExtra(SignupObject.SIGNOP_OBJECT_TAG);
         setContentView(R.layout.activity_meal_selection);
 
         continueButton = (Button) findViewById(R.id.meal_selection_continue_button);
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "Saving pref meal: " + meal);
-                Utilities.saveMeal(getApplicationContext(), meal);
                 Log.d(TAG, "Continue to next screen");
                 Intent intent = new Intent(getApplicationContext(), TimeSelectionActivity.class);
-                signupObject.setMeal(meal);
-                intent.putExtra(SignupObject.SIGNOP_OBJECT_TAG, signupObject);
+                //signupObject.setMeal(meal);
+                //intent.putExtra(SignupObject.SIGNOP_OBJECT_TAG, signupObject);
                 startActivity(intent);
             }
         });
-
 
         SQLiteHandler database = new SQLiteHandler(this);
         ArrayList<Meal> arrayOfMeals = database.getMeals();
@@ -62,6 +59,8 @@ public class MealSelectionActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 view.setSelected(true);
                 meal = (Meal) parent.getItemAtPosition(position);
+                Log.d(TAG, "Saving pref meal: " + meal);
+                Utilities.saveMeal(getApplicationContext(), meal);
                 continueButton.setEnabled(true);
             }
         });

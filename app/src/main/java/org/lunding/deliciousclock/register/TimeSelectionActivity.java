@@ -30,15 +30,15 @@ public class TimeSelectionActivity extends AppCompatActivity {
     private Button continueButton;
     private Button timePickerButton;
     private Time time;
-    private SignupObject signupObject;
+    //private SignupObject signupObject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d(TAG, TAG + " initializing...");
         super.onCreate(savedInstanceState);
-        signupObject = (SignupObject) getIntent().getSerializableExtra(SignupObject.SIGNOP_OBJECT_TAG);
+        //signupObject = (SignupObject) getIntent().getSerializableExtra(SignupObject.SIGNOP_OBJECT_TAG);
         setContentView(R.layout.activity_time_selection);
-        time = new Time();
+        time = Utilities.getTime(this);
 
         continueButton = (Button) findViewById(R.id.time_selection_continue_button);
         continueButton.setOnClickListener(new View.OnClickListener() {
@@ -48,14 +48,14 @@ public class TimeSelectionActivity extends AppCompatActivity {
                 Utilities.saveTime(getApplicationContext(), time);
                 Log.d(TAG, "Continue to next screen");
                 Intent intent = new Intent(getApplicationContext(), AddressSelectionActivity.class);
-                signupObject.setTime(time);
-                intent.putExtra(SignupObject.SIGNOP_OBJECT_TAG, signupObject);
+                //signupObject.setTime(time);
+                //intent.putExtra(SignupObject.SIGNOP_OBJECT_TAG, signupObject);
                 startActivity(intent);
             }
         });
 
         timePickerButton = (Button) findViewById(R.id.time_selection_time_button);
-        setTimeButtonLabel();
+        timePickerButton.setText(Utilities.makeTimeString(time));
         timePickerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,7 +69,8 @@ public class TimeSelectionActivity extends AppCompatActivity {
                                 if (hourOfDay > 5 && hourOfDay < 11){
                                     time.setHourOfDay(hourOfDay);
                                     time.setMinute(minute);
-                                    setTimeButtonLabel();
+                                    Utilities.makeTimeString(time);
+                                    Utilities.saveTime(mActivity, time);
                                 } else {
                                     Toast.makeText(mActivity, "We deliver from 06.00 to 11.00", Toast.LENGTH_SHORT).show();
                                 }
@@ -83,8 +84,4 @@ public class TimeSelectionActivity extends AppCompatActivity {
         Log.d(TAG, TAG + " initialized");
     }
 
-    private void setTimeButtonLabel(){
-        String minute = time.getMinute() < 10 ? "0"+time.getMinute() : time.getMinute()+"";
-        timePickerButton.setText(time.getHourOfDay() + ":" + minute);
-    }
 }

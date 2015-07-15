@@ -33,7 +33,7 @@ public class AddressSelectionActivity extends AppCompatActivity {
     private EditText zipcodeField;
     private Button continueButton;
     private Address address;
-    private SignupObject signupObject;
+    //private SignupObject signupObject;
     private Activity mActivity = this;
     private boolean stateValid = false, zipcodeValid = false;
 
@@ -41,19 +41,17 @@ public class AddressSelectionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         Log.d(TAG, TAG + " initializing...");
         super.onCreate(savedInstanceState);
-        signupObject = (SignupObject) getIntent().getSerializableExtra(SignupObject.SIGNOP_OBJECT_TAG);
+        //signupObject = (SignupObject) getIntent().getSerializableExtra(SignupObject.SIGNOP_OBJECT_TAG);
         setContentView(R.layout.activity_address_selection);
 
         continueButton = (Button) findViewById(R.id.address_selection_continue_button);
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "Saving pref meal: " + address);
-                Utilities.saveAddress(getApplicationContext(), address);
                 Log.d(TAG, "Continue to next screen");
                 Intent intent = new Intent(getApplicationContext(), OverviewSelectionActivity.class);
-                signupObject.setAddress(address);
-                intent.putExtra(SignupObject.SIGNOP_OBJECT_TAG, signupObject);
+                //signupObject.setAddress(address);
+                //intent.putExtra(SignupObject.SIGNOP_OBJECT_TAG, signupObject);
                 startActivity(intent);
             }
         });
@@ -67,7 +65,8 @@ public class AddressSelectionActivity extends AppCompatActivity {
         ArrayAdapter<String> stateAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, statesArray);
         stateField.setAdapter(stateAdapter);
 
-        address = signupObject.getAddress();
+        //address = signupObject.getAddress();
+        address = Utilities.getAddress(this);
         if (address != null){
             addressField.setText(address.getAddress());
             cityField.setText(address.getCity());
@@ -130,6 +129,8 @@ public class AddressSelectionActivity extends AppCompatActivity {
         if (stateValid && zipcodeValid){
             this.address = new Address(getAddress(), getCity(), getState(), getZipCode());
             continueButton.setEnabled(true);
+            Log.d(TAG, "Saving pref meal: " + address);
+            Utilities.saveAddress(getApplicationContext(), address);
         } else {
             continueButton.setEnabled(false);
         }
