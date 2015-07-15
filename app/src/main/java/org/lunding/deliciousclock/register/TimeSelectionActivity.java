@@ -44,7 +44,7 @@ public class TimeSelectionActivity extends AppCompatActivity {
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "Saving pref meal: " + time);
+                Log.d(TAG, "Saving pref time: " + time);
                 Utilities.saveTime(getApplicationContext(), time);
                 Log.d(TAG, "Continue to next screen");
                 Intent intent = new Intent(getApplicationContext(), AddressSelectionActivity.class);

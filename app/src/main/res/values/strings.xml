@@ -137,5 +137,6 @@
         <item>Wyoming</item>
         <item>Yukon Territory</item>
     </string-array>
+    <string name="title_activity_maps">Map</string>
 
 </resources>

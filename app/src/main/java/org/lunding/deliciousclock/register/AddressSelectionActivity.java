@@ -3,7 +3,6 @@ package org.lunding.deliciousclock.register;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -14,10 +13,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.SupportMapFragment;
+
 import org.lunding.deliciousclock.R;
 import org.lunding.deliciousclock.Utilities;
 import org.lunding.deliciousclock.data.Address;
-import org.lunding.deliciousclock.data.AppConstants;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -36,6 +37,7 @@ public class AddressSelectionActivity extends AppCompatActivity {
     //private SignupObject signupObject;
     private Activity mActivity = this;
     private boolean stateValid = false, zipcodeValid = false;
+    private GoogleMap googleMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,8 +80,8 @@ public class AddressSelectionActivity extends AppCompatActivity {
         stateField.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus){
-                    if (!states.containsKey(getState())){
+                if (!hasFocus) {
+                    if (!states.containsKey(getState())) {
                         Toast.makeText(mActivity, "That is not a state", Toast.LENGTH_SHORT).show();
                         stateValid = false;
                     } else {
@@ -93,9 +95,9 @@ public class AddressSelectionActivity extends AppCompatActivity {
         zipcodeField.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus){
+                if (!hasFocus) {
                     String zipCode = getZipCode();
-                    if (zipCode.length() != 5){
+                    if (zipCode.length() != 5) {
                         Toast.makeText(mActivity, "Invalid zipcode", Toast.LENGTH_SHORT).show();
                         zipcodeValid = false;
                     } else {
@@ -105,6 +107,19 @@ public class AddressSelectionActivity extends AppCompatActivity {
                 }
             }
         });
+
+        if (googleMap == null){
+            googleMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
+            if (googleMap == null){
+                Toast.makeText(this, "Sorry! Unable to create maps",
+                        Toast.LENGTH_LONG).show();
+            }
+        }
+        if (googleMap != null){
+            googleMap.setMyLocationEnabled(true);
+            googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        }
+
 
         Log.d(TAG, TAG + " initialized");
     }
