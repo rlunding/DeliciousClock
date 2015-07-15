@@ -126,6 +126,7 @@ public class AddressSelectionActivity extends AppCompatActivity {
             googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         }
 
+
         validateInput();
 
         Log.d(TAG, TAG + " initialized");
