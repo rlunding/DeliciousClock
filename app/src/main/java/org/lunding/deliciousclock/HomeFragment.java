@@ -1,6 +1,7 @@
 package org.lunding.deliciousclock;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,10 +11,19 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import org.lunding.deliciousclock.data.Address;
+import org.lunding.deliciousclock.data.AppConstants;
+import org.lunding.deliciousclock.data.Meal;
+import org.lunding.deliciousclock.data.Time;
+
 /**
  * Created by Lunding on 14/07/15.
  */
 public class HomeFragment extends Fragment {
+
+    private Meal meal;
+    private Time time;
+    private Address address;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -22,6 +32,10 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        meal = Utilities.getMeal(getActivity());
+        time = Utilities.getTime(getActivity());
+        address = Utilities.getAddress(getActivity());
 
     }
 
@@ -36,7 +50,9 @@ public class HomeFragment extends Fragment {
 
 
         //TODO: read meal-image from database?
-
+        mealImage.setImageResource(meal.getImage());
+        timeButton.setText("      " + Utilities.makeTimeString(time));
+        offsetButton.setText(Utilities.makeOffsetStrign(time));
 
         mealImage.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -2,6 +2,7 @@ package org.lunding.deliciousclock.register;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -10,8 +11,11 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
+import org.lunding.deliciousclock.Utilities;
+import org.lunding.deliciousclock.data.AppConstants;
 import org.lunding.deliciousclock.data.Meal;
 import org.lunding.deliciousclock.R;
+import org.lunding.deliciousclock.data.SQLiteHandler;
 
 import java.util.ArrayList;
 
@@ -35,6 +39,8 @@ public class MealSelectionActivity extends AppCompatActivity {
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d(TAG, "Saving pref meal: " + meal);
+                Utilities.saveMeal(getApplicationContext(), meal);
                 Log.d(TAG, "Continue to next screen");
                 Intent intent = new Intent(getApplicationContext(), TimeSelectionActivity.class);
                 signupObject.setMeal(meal);
@@ -44,13 +50,8 @@ public class MealSelectionActivity extends AppCompatActivity {
         });
 
 
-        ArrayList<Meal> arrayOfMeals = new ArrayList<>();
-        arrayOfMeals.add(new Meal(R.drawable.bacon_and_eggs, "Bacon and eggs", "Includes two sweet delicious fried pieces of pork," +
-                "scramled eggs, and a piece of toast."));
-        arrayOfMeals.add(new Meal(R.drawable.burrito, "Breakfast Burrito", "Includes two delicious breakfast burritos. Pick this one" +
-                "if you're allergic to everything."));
-        arrayOfMeals.add(new Meal(R.drawable.vegetarian, "Vegetarian", "Includes some vegetarian lasagna thingy. You should pick" +
-                "this one if you're against killing animals for food!"));
+        SQLiteHandler database = new SQLiteHandler(this);
+        ArrayList<Meal> arrayOfMeals = database.getMeals();
         MealAdapter adapter = new MealAdapter(this, arrayOfMeals);
         ListView listView = (ListView) findViewById(R.id.meal_selection_listView);
         listView.setAdapter(adapter);

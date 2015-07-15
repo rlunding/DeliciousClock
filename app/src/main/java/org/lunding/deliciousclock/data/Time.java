@@ -17,6 +17,12 @@ public class Time implements Serializable {
         offset = 10;
     }
 
+    public Time(int hourOfDay, int minute, int offset) {
+        this.hourOfDay = hourOfDay;
+        this.minute = minute;
+        this.offset = offset;
+    }
+
     public int getHourOfDay() {
         return hourOfDay;
     }
@@ -39,5 +45,10 @@ public class Time implements Serializable {
 
     public void setOffset(int offset) {
         this.offset = offset;
+    }
+
+    @Override
+    public String toString() {
+        return "Time: " + hourOfDay + ":" + minute + ", " + offset + " before";
     }
 }

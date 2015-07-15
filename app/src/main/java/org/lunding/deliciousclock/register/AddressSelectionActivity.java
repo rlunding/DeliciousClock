@@ -3,16 +3,21 @@ package org.lunding.deliciousclock.register;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import org.lunding.deliciousclock.R;
+import org.lunding.deliciousclock.Utilities;
 import org.lunding.deliciousclock.data.Address;
+import org.lunding.deliciousclock.data.AppConstants;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +29,7 @@ public class AddressSelectionActivity extends AppCompatActivity {
 
     private EditText addressField;
     private EditText cityField;
-    private EditText stateField;
+    private AutoCompleteTextView stateField;
     private EditText zipcodeField;
     private Button continueButton;
     private Address address;
@@ -43,6 +48,8 @@ public class AddressSelectionActivity extends AppCompatActivity {
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d(TAG, "Saving pref meal: " + address);
+                Utilities.saveAddress(getApplicationContext(), address);
                 Log.d(TAG, "Continue to next screen");
                 Intent intent = new Intent(getApplicationContext(), OverviewSelectionActivity.class);
                 signupObject.setAddress(address);
@@ -53,8 +60,12 @@ public class AddressSelectionActivity extends AppCompatActivity {
 
         addressField = (EditText) findViewById(R.id.address_selection_address);
         cityField = (EditText) findViewById(R.id.address_selection_city);
-        stateField = (EditText) findViewById(R.id.address_selection_state);
+        stateField = (AutoCompleteTextView) findViewById(R.id.address_selection_state);
         zipcodeField = (EditText) findViewById(R.id.address_selection_zipcode);
+
+        String[] statesArray = getResources().getStringArray(R.array.states_array);
+        ArrayAdapter<String> stateAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, statesArray);
+        stateField.setAdapter(stateAdapter);
 
         address = signupObject.getAddress();
         if (address != null){
@@ -64,6 +75,7 @@ public class AddressSelectionActivity extends AppCompatActivity {
             zipcodeField.setText(String.valueOf(address.getZipCode()));
         }
 
+        //TODO: proper input validation
         stateField.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -83,8 +95,8 @@ public class AddressSelectionActivity extends AppCompatActivity {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus){
-                    int zipCode = getZipCode();
-                    if (String.valueOf(zipCode).length() != 5){
+                    String zipCode = getZipCode();
+                    if (zipCode.length() != 5){
                         Toast.makeText(mActivity, "Invalid zipcode", Toast.LENGTH_SHORT).show();
                         zipcodeValid = false;
                     } else {
@@ -110,14 +122,13 @@ public class AddressSelectionActivity extends AppCompatActivity {
         return stateField.getText().toString();
     }
 
-    private int getZipCode(){
-        String zipCodeString = zipcodeField.getText().toString();
-        return Integer.parseInt(zipCodeString.equals("") ? "0" : zipCodeString);
+    private String getZipCode(){
+        return zipcodeField.getText().toString();
     }
 
     private void validateInput(){
         if (stateValid && zipcodeValid){
-            this.address = new Address(getAddress(), getCity(), getState(), getZipCode());
+            this.address = new Address(1, getAddress(), getCity(), getState(), getZipCode());
             continueButton.setEnabled(true);
         } else {
             continueButton.setEnabled(false);

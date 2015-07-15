@@ -42,11 +42,10 @@
             android:id="@+id/address_selection_city"
             android:hint="@string/city_form" />
 
-        <EditText
+        <AutoCompleteTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:inputType="textAutoComplete"
             android:ems="10"
             android:id="@+id/address_selection_state"
             android:hint="@string/state_form" />

@@ -10,9 +10,9 @@ public class Address implements Serializable{
     private String address;
     private String city;
     private String state;
-    private int zipCode;
+    private String zipCode;
 
-    public Address(String address, String city, String state, int zipCode) {
+    public Address(String address, String city, String state, String zipCode) {
         this.address = address;
         this.city = city;
         this.state = state;
@@ -31,7 +31,7 @@ public class Address implements Serializable{
         return state;
     }
 
-    public int getZipCode() {
+    public String getZipCode() {
         return zipCode;
     }
 }

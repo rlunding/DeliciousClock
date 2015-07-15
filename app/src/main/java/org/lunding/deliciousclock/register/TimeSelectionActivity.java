@@ -3,6 +3,7 @@ package org.lunding.deliciousclock.register;
 import android.app.Activity;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -12,6 +13,8 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import org.lunding.deliciousclock.R;
+import org.lunding.deliciousclock.Utilities;
+import org.lunding.deliciousclock.data.AppConstants;
 import org.lunding.deliciousclock.data.Time;
 
 import java.util.Calendar;
@@ -41,6 +44,8 @@ public class TimeSelectionActivity extends AppCompatActivity {
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d(TAG, "Saving pref meal: " + time);
+                Utilities.saveTime(getApplicationContext(), time);
                 Log.d(TAG, "Continue to next screen");
                 Intent intent = new Intent(getApplicationContext(), AddressSelectionActivity.class);
                 signupObject.setTime(time);
