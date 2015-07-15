@@ -42,13 +42,14 @@
                 android:gravity="center"
                 android:text="hej"
                 android:fontFamily="sans-serif-condensed"
-                android:textAppearance="?android:textAppearanceLarge"/>
+                android:textAppearance="?android:textAppearanceLarge"
+                android:textColor="@color/continue_button_background_color"/>
 
             <TextView
                 android:id="@+id/list_item_meal_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:gravity="start|bottom"
                 android:text="davs"
                 android:fontFamily="sans-serif-condensed"
                 android:textAppearance="?android:textAppearanceSmall"/>
