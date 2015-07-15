@@ -12,7 +12,8 @@
         android:id="@+id/overview_selection_image"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="7"/>
+        android:layout_weight="7"
+        android:layout_margin="0dp"/>
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -24,93 +25,119 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="20dp"
-            android:padding="5dp"
-            android:background="#fff"
-            android:orientation="vertical">
+            android:layout_margin="10dp"
+            android:padding="15dp"
+            android:orientation="vertical"
+            android:background="@android:drawable/dialog_holo_light_frame">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical|center_horizontal"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="start"
                     android:layout_weight="1"
-                    android:text="Meal"/>
+                    android:text="Meal"
+                    android:textSize="25sp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textStyle="bold"
+                    android:textColor="#333333"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="right"
                     android:layout_weight="1"
-                    android:id="@+id/overview_selection_meal"/>
+                    android:id="@+id/overview_selection_meal"
+                    android:textSize="25sp"
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical|center_horizontal"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="start"
                     android:layout_weight="1"
-                    android:text="Delivery"/>
+                    android:text="Delivery"
+                    android:textSize="25sp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textStyle="bold"
+                    android:textColor="#333333"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="right"
                     android:layout_weight="1"
-                    android:id="@+id/overview_selection_delivery"/>
+                    android:id="@+id/overview_selection_delivery"
+                    android:textSize="25sp"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical|center_horizontal"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp"
+                >
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="start"
                     android:layout_weight="1"
-                    android:text="Alarm"/>
+                    android:text="Alarm"
+                    android:textSize="25sp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textStyle="bold"
+                    android:textColor="#333333"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="right"
                     android:layout_weight="1"
-                    android:id="@+id/overview_selection_alarm"/>
+                    android:id="@+id/overview_selection_alarm"
+                    android:textSize="25sp"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical|center_horizontal"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                >
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="start"
                     android:layout_weight="1"
-                    android:text="Street"/>
+                    android:text="Street"
+                    android:textSize="25sp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textStyle="bold"
+                    android:textColor="#333333"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="right"
                     android:layout_weight="1"
-                    android:id="@+id/overview_selection_address"/>
+                    android:id="@+id/overview_selection_address"
+                    android:textSize="25sp"/>
             </LinearLayout>
 
         </LinearLayout>

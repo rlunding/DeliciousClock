@@ -25,14 +25,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Let's get you started!"/>
+            android:text="Let's get you started!"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:fontFamily=""/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="Take the tour"
-            android:id="@+id/register_button" />
+            android:id="@+id/register_button"
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:padding="18dp"/>
     </LinearLayout>
 
 
