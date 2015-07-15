@@ -1,6 +1,7 @@
 package org.lunding.deliciousclock;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,6 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+
+import org.lunding.deliciousclock.register.WelcomeActivity;
 
 /**
  * mentor: martin.gryner@gmail.com
@@ -93,7 +96,7 @@ public class MainActivity extends ActionBarActivity implements FragmentDrawer.Fr
                 title = getString(R.string.title_cancel_meal);
                 break;
             case 3:
-                Toast.makeText(this, "Log out", Toast.LENGTH_SHORT).show();
+                logout();
                 break;
             case 4:
                 fragment = new AboutFragment();
@@ -112,5 +115,12 @@ public class MainActivity extends ActionBarActivity implements FragmentDrawer.Fr
             // set the toolbar title
             getSupportActionBar().setTitle(title);
         }
+    }
+
+    private void logout(){
+        Toast.makeText(this, "Logging out", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getApplicationContext(), WelcomeActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
