@@ -25,7 +25,7 @@
     <string name="meal_selection_continue_button">Let\'s go!</string>
     <string name="wanting_breakfast">I want my breakfast at...</string>
     <string name="breakfast_time_order_button">7:30 am</string>
-    <string name="wake_up_request">... so please wake me up</string>
+    <string name="wake_up_request">... please wake me up</string>
     <string name="time_selection_notification_button">10 minutes</string>
     <string name="earlier">earlier</string>
 

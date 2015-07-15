@@ -57,7 +57,7 @@ public class TimeSelectionActivity extends AppCompatActivity {
         timePickerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Utilities.showTimePicker(mActivity, time, timePickerButton, "     ");
+                Utilities.showTimePicker(mActivity, time, timePickerButton);
             }
         });
 

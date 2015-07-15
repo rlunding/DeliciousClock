@@ -68,7 +68,7 @@ public class HomeFragment extends Fragment {
         timeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Utilities.showTimePicker(getActivity(), time, timeButton);
+                Utilities.showTimePicker(getActivity(), time, timeButton, "     ");
             }
         });
 
