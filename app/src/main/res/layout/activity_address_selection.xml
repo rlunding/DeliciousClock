@@ -75,6 +75,9 @@
             android:id="@+id/address_selection_continue_button"
             android:enabled="false"
             android:background="@color/continue_button_background_color"
-            android:textColor="@color/continue_button_text_color"/>
+            android:textColor="@color/continue_button_text_color"
+            android:fontFamily="sans-serif-condensed"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
     </FrameLayout>
 </LinearLayout>

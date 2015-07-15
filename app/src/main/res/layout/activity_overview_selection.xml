@@ -125,9 +125,12 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Correct"
+            android:text="Correct!"
             android:id="@+id/overview_selection_continue_button"
             android:background="@color/continue_button_background_color"
-            android:textColor="@color/continue_button_text_color"/>
+            android:textColor="@color/continue_button_text_color"
+            android:fontFamily="sans-serif-condensed"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
     </FrameLayout>
 </LinearLayout>
