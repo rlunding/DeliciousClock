@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /**
  * Created by Lunding on 14/07/15.
@@ -27,6 +28,11 @@ public class AboutFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_about, container, false);
 
+        TextView textView = (TextView) rootView.findViewById(R.id.text2);
+        int i = 1;
+        for (int j = 0; j < 1000; j++){
+            System.out.println(i * j);
+        }
 
         // Inflate the layout for this fragment
         return rootView;

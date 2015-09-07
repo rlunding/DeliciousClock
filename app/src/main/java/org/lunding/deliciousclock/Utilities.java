@@ -92,9 +92,6 @@ public class Utilities {
     }
 
     public static void showTimePicker(final Context context, final Time time, final Button timeButton, final String padding){
-        Calendar currentTime = Calendar.getInstance();
-        int hour = currentTime.get(Calendar.HOUR_OF_DAY);
-        int minute = currentTime.get(Calendar.MINUTE);
         TimePickerDialog timePicker = new TimePickerDialog(context,
                 new TimePickerDialog.OnTimeSetListener() {
                     @Override
@@ -108,8 +105,9 @@ public class Utilities {
                             Toast.makeText(context, "We deliver from 06.00 to 11.00", Toast.LENGTH_SHORT).show();
                         }
                     }
-                }, hour, minute, true);
+                }, time.getHourOfDay(), time.getMinute(), true);
         timePicker.setTitle("Select time");
+
         timePicker.show();
     }
 
