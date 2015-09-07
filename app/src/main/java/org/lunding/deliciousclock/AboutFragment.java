@@ -28,6 +28,11 @@ public class AboutFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_about, container, false);
 
+
+
+
+
+
         // Inflate the layout for this fragment
         return rootView;
     }
