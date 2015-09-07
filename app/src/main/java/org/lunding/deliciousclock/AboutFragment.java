@@ -28,12 +28,6 @@ public class AboutFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_about, container, false);
 
-        TextView textView = (TextView) rootView.findViewById(R.id.text2);
-        int i = 1;
-        for (int j = 0; j < 1000; j++){
-            System.out.println(i * j);
-        }
-
         // Inflate the layout for this fragment
         return rootView;
     }
